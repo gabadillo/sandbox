@@ -82,7 +82,7 @@ plot(t(mu.hist))
 muHat =  mean(mu.hist[-c(1:burnIn)])
 varUhat = mean(varU.hist[-c(1:burnIn)])
 varEhat = mean(varE.hist[-c(1:burnIn)])
-uHat = apply(u.hist[,1:burnIn], 1, mean)
+uHat = apply(u.hist[,-c(1:burnIn)], 1, mean)
 rHat = drop(cor(uHat, y))
 
 mine_out = c('mu' = muHat, 'r' = rHat, 'varU' = varUhat, 'varE' = varEhat)
